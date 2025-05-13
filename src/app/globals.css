@@ -8,25 +8,25 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --background: 40 100% 97%; /* #FFFAF0 Creamy White */
+    --foreground: 20 20% 24%; /* #4A3B31 Dark Brown for text */
+    --card: 60 56% 91%; /* #F5F5DC Warm Beige */
+    --card-foreground: 20 20% 24%;
+    --popover: 60 56% 91%;
+    --popover-foreground: 20 20% 24%;
+    --primary: 51 100% 50%; /* #FFD700 Golden Yellow */
+    --primary-foreground: 51 25% 15%; /* Darker shade for text on Golden Yellow */
+    --secondary: 34 41% 72%; /* #D2B48C Light Brown */
+    --secondary-foreground: 40 100% 97%; /* #FFFAF0 Creamy White text on Light Brown */
+    --muted: 60 56% 93%; /* Lighter Warm Beige */
+    --muted-foreground: 20 20% 40%; /* Muted Dark Brown text */
+    --accent: 51 100% 50%; /* #FFD700 Golden Yellow, same as primary for this app */
+    --accent-foreground: 51 25% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 40 30% 85%; /* Lighter shade of Warm Beige/Light Brown for borders */
+    --input: 40 30% 88%; /* Slightly lighter for input backgrounds */
+    --ring: 51 100% 50%; /* Golden Yellow for focus ring */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -43,25 +43,25 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 20 20% 10%; /* Dark Brown/Black for dark mode background */
+    --foreground: 40 100% 97%; /* Creamy White for dark mode text */
+    --card: 20 20% 15%; /* Darker card background */
+    --card-foreground: 40 100% 97%;
+    --popover: 20 20% 15%;
+    --popover-foreground: 40 100% 97%;
+    --primary: 51 100% 50%; /* Golden Yellow */
+    --primary-foreground: 51 25% 15%;
+    --secondary: 34 41% 60%; /* Slightly darker Light Brown for dark mode */
+    --secondary-foreground: 40 100% 97%;
+    --muted: 20 20% 20%; /* Muted dark background */
+    --muted-foreground: 40 50% 80%; /* Lighter muted text */
+    --accent: 51 100% 50%;
+    --accent-foreground: 51 25% 15%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 20 20% 25%; /* Darker border */
+    --input: 20 20% 22%; /* Darker input */
+    --ring: 51 100% 50%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
