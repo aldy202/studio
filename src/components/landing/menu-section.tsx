@@ -1,17 +1,19 @@
+import * as motion from "motion/react-client"
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { PackageIcon, UtensilsIcon, SparklesIcon, BlendIcon, ZapIcon } from 'lucide-react'; // ZapIcon for cheese/choco, Blend for Mix
-import Link from 'next/link';
+import Link from 'next/link'
 
 const menuItems = [
   {
     id: 'frozen',
     title: 'Frozen Food',
-    price: 'Rp 10k',
+    price: 'Rp 10.000',
     description: 'Mau stok camilan di rumah? Dapatkan Kaju Aroma Frozen Food, praktis dan tahan lama!',
-    imageSrc: 'https://picsum.photos/seed/kaju_frozen/600/400',
+    imageSrc: '/img/frozen.jpeg',
     imageHint: 'frozen snack package',
     icon: <PackageIcon className="h-8 w-8 text-primary mb-2" />,
   },
@@ -46,7 +48,14 @@ export default function MenuSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {menuItems.map((item) => (
-            <Card key={item.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
+            <motion.div
+              key={item.id}
+              className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card"
+              initial={{ opacity: 0, y: 50 }} // Initial state for animation
+              whileInView={{ opacity: 1, y: 0 }} // Final state when in view
+              viewport={{ once: true }} // Trigger animation only once when it enters the view
+              transition={{ duration: 0.6 }} // Duration of the animation
+            >
               <div className="relative h-60 w-full">
                 <Image
                   src={item.imageSrc}
@@ -71,7 +80,7 @@ export default function MenuSection() {
                   </Link>
                 </Button>
               </CardFooter>
-            </Card>
+            </motion.div>
           ))}
         </div>
 
@@ -83,39 +92,53 @@ export default function MenuSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {variants.map((variant) => (
-            <Card key={variant.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
+            <motion.div
+              key={variant.name}
+              className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="relative h-48 w-full">
                 <Image src={variant.imageSrc} alt={variant.name} layout="fill" objectFit="cover" data-ai-hint={variant.imageHint} />
               </div>
               <CardContent className="p-4 text-center">
-                 <div className="flex items-center justify-center mb-2">
-                    {variant.icon}
-                    <h4 className="text-lg font-medium text-foreground">{variant.name}</h4>
-                 </div>
+                <div className="flex items-center justify-center mb-2">
+                  {variant.icon}
+                  <h4 className="text-lg font-medium text-foreground">{variant.name}</h4>
+                </div>
               </CardContent>
-            </Card>
+            </motion.div>
           ))}
         </div>
-        
+
         <Separator className="my-12 bg-border" />
 
         <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-2">
-                 <SparklesIcon className="h-8 w-8 text-primary mr-2" />
-                 <h3 className="text-2xl md:text-3xl font-semibold text-foreground">Pilihan Topping</h3>
-            </div>
+          <div className="flex items-center justify-center mb-2">
+            <SparklesIcon className="h-8 w-8 text-primary mr-2" />
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground">Pilihan Topping</h3>
+          </div>
           <p className="text-muted-foreground">Tambahkan sentuhan akhir yang manis!</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {toppings.map((topping) => (
-            <Card key={topping.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
+            <motion.div
+              key={topping.name}
+              className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="relative h-40 w-full">
                 <Image src={topping.imageSrc} alt={topping.name} layout="fill" objectFit="cover" data-ai-hint={topping.imageHint} />
               </div>
               <CardContent className="p-4 text-center">
                 <h4 className="text-lg font-medium text-foreground">{topping.name}</h4>
               </CardContent>
-            </Card>
+            </motion.div>
           ))}
         </div>
         <p className="text-center mt-8 text-lg text-muted-foreground">

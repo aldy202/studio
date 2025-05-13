@@ -8,18 +8,10 @@ import ScrollAnimationWrapper from '@/components/animations/scroll-animation-wra
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <ScrollAnimationWrapper>
-        <HeroSection />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper delay={100}>
-        <MenuSection />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper delay={200}>
-        <FaqSection />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper delay={300}>
-        <ContactFooter />
-      </ScrollAnimationWrapper>
+      <HeroSection />
+      <MenuSection />
+      <FaqSection />
+      <ContactFooter />
     </div>
   );
 }
